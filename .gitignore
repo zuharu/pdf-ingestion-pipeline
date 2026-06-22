@@ -1,0 +1,22 @@
+# Environment
+.env
+**/.env
+__pycache__/
+*.pyc
+.hermes/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Temp
+*.log
+tmp/
+temp/
+
+# Output (generated at runtime)
+result/
+finished_pdf/
