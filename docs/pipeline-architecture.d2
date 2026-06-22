@@ -1,0 +1,26 @@
+direction: right
+
+# ── Style ──
+sketch: true
+theme: "origami"
+
+# Unified Cloud GPU Pipeline
+
+GPU_Instance: {
+    "RTX 4090" -> "Marker-pdf (GPU)"
+    "RTX 4090" -> "Ollama VLM (GPU)"
+    "RTX 4090" -> "Netlistify (GPU)"
+}
+
+Local_WSL: {
+    orchestrate.py -> "Rent GPU"
+    "Rent GPU" -> "Upload PDF"
+    "Upload PDF" -> "SSH Exec"
+    "SSH Exec" -> "Download Results"
+    "Download Results" -> "Destroy Instance"
+}
+
+GPU_Instance -> Local_WSL: {
+    "Enhanced Markdown"
+    "SPICE Netlists"
+}
